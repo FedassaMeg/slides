@@ -10,30 +10,30 @@ const desc = document.querySelector('.desc');
 let counter = 0;
 
 // there has to be a better way to generate this 
-firstImg = new Image();
-firstImg.src = './img/ender3_s1.jpg';
-secondImg = new Image();
-secondImg.src = './img/flsun.jpg';
-thirdImg = new Image();
-thirdImg.src = './img/prusa_mini.jpg';
-fourthImg = new Image();
-fourthImg.src = './img/voron2_4.JPG';
+ender = new Image();
+ender.src = './img/ender3_s1.jpg';
+flsun = new Image();
+flsun.src = './img/flsun.jpg';
+prusa = new Image();
+prusa.src = './img/prusa_mini.jpg';
+voron = new Image();
+voron.src = './img/voron2_4.JPG';
 
 // const imgArray = [firstImg, secondImg, thirdImg, fourthImg];
 const imgArray = [{
-  ele: firstImg,
+  ele: ender,
   title: 'Ender 3 S1',
   desc: 'description 1 goes here words words words words words words',
 }, {
-  ele: secondImg,
+  ele: flsun,
   title: 'Flsun SR',
   desc: 'description 2 goes here',
 }, {
-  ele: thirdImg,
+  ele: prusa,
   title: 'Prusa Mini+',
   desc: 'description 3 goes here words words words words words words words words words words words words',
 }, {
-  ele: fourthImg,
+  ele: voron,
   title: 'Voron 2.4',
   desc: 'description 4 goes here',
 }]
@@ -46,7 +46,7 @@ function replaceImg() {
   // setTimeout(imgRight, 5900);
 } 
 
-function replaceTitle() {
+function replaceText() {
   title.textContent = imgArray[counter % imgArray.length].title;
   desc.textContent = imgArray[counter % imgArray.length].desc;
 }
@@ -54,13 +54,13 @@ function replaceTitle() {
 const imgLeft = () => {
   counter === 0 ? counter = imgArray.length - 1 : --counter;
   replaceImg();
-  replaceTitle();
+  replaceText();
 }
 
 const imgRight = () => {
   ++counter;
   replaceImg();
-  replaceTitle();
+  replaceText();
 }
 
 left.onclick = imgLeft;
@@ -74,9 +74,8 @@ genNavDot = (index) => {
   dot.onclick = () => {
     // console.log(index);
     counter = index;
-    imgWrapper.removeChild(imgWrapper.lastChild);
-    imgWrapper.appendChild(imgArray[index].ele);
-    replaceTitle();
+    replaceImg();
+    replaceText();
   }
   return dot;
 }
@@ -89,14 +88,15 @@ imgArray.forEach((item, index) => {
 const autoSlide = setInterval(function() {
   ++counter;
   replaceImg();
-  replaceTitle();
-}, 3900); // I want this interval to be reset when a button is clicked
+  replaceText();
+}, 3900); // I want this interval to be reset when any button is clicked
 // because rn it progresses the slide every 3900ms regardless of when last btn was clicked
 
-// append first image from array to DOM
+// append first image from array to DOM, then initialize text
 imgWrapper.appendChild(imgArray[0].ele); 
-// initialize title
-replaceTitle();
+replaceText();
+
+
 
 
 

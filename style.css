@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
 :root {
   --dark: #365314; /* lime 900 */
   --accent: #a3e635; /* lime 400 */
@@ -9,7 +11,8 @@
 * {
   margin: 0;
   color: var(--text);
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: 'Fredoka';
 }
 
 .wrapper {
@@ -28,6 +31,7 @@
   width: 100%;
   position: fixed;
   z-index: 1;
+  box-shadow: 0 0 12px 2px rgb(114, 114, 114);
 }
 
 .content {
@@ -56,12 +60,14 @@
 .menu {
   height: 100%;
   width: 300px;
-  background-color: green;
+  background-color: #3f6212;
   position: fixed;
   display: none;
   font-size: 4rem;
   font-weight: bold;
   z-index: 2;
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 0 12px 2px rgb(59, 59, 59);
 }
 
 .visible {
