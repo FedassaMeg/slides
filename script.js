@@ -5,37 +5,23 @@ const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const dotContainer = document.querySelector('.dot-container');
 
-const menuToggler = () => {
-  if (menu.classList.contains('visible')) {
-    menu.classList.remove('visible');
-  } else {
-    menu.classList.add('visible');
-  }
-}
 
-header.onclick = menuToggler;
-
-
-
+// there has to be a better way to do this 
 firstImg = new Image();
 firstImg.src = './img/mac.jpg';
-
 secondImg = new Image();
 secondImg.src = './img/apple.jpg';
-
 thirdImg = new Image();
 thirdImg.src = './img/bridge.jpg';
-
 fourthImg = new Image();
 fourthImg.src = './img/sus.jpg';
-
-
-
 
 const imgArray = [firstImg, secondImg, thirdImg, fourthImg];
 
 let counter = 0;
-imgWrapper.appendChild(imgArray[0]);
+
+// append first image from array to DOM
+imgWrapper.appendChild(imgArray[0]); 
 
 function replaceImg() {
   const currIndex = counter % imgArray.length
@@ -77,3 +63,21 @@ imgArray.forEach((item, index) => {
   console.log(item);
   dotContainer.append(genNavDot(index));
 })
+
+
+
+
+
+
+
+
+
+const menuToggler = () => {
+  if (menu.classList.contains('visible')) {
+    menu.classList.remove('visible');
+  } else {
+    menu.classList.add('visible');
+  }
+}
+
+header.onclick = menuToggler;
