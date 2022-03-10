@@ -5,7 +5,9 @@ const imgWrapper = document.querySelector('.img-wrapper');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const dotContainer = document.querySelector('.dot-container');
+const desc = document.querySelector('.desc');
 
+let counter = 0;
 
 // there has to be a better way to generate this 
 firstImg = new Image();
@@ -21,7 +23,7 @@ fourthImg.src = './img/sus.jpg';
 const imgArray = [{
   ele: firstImg,
   title: 'Fruit',
-  desc: 'description 1 goes here',
+  desc: 'description 1 goes here words words words words words words',
 }, {
   ele: secondImg,
   title: 'Fruit 2',
@@ -29,14 +31,12 @@ const imgArray = [{
 }, {
   ele: thirdImg,
   title: 'Bridge',
-  desc: 'description 3 goes here',
+  desc: 'description 3 goes here words words words words words words words words words words words words',
 }, {
   ele: fourthImg,
   title: '???',
   desc: 'description 4 goes here',
 }]
-
-let counter = 0;
 
 function replaceImg() {
   const currIndex = counter % imgArray.length
@@ -48,6 +48,7 @@ function replaceImg() {
 
 function replaceTitle() {
   title.textContent = imgArray[counter % imgArray.length].title;
+  desc.textContent = imgArray[counter % imgArray.length].desc;
 }
 
 const imgLeft = () => {
