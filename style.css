@@ -25,6 +25,10 @@
   justify-content: center;
   background-color: var(--dark);
   font-size: 5rem;
+  border-bottom: 4px solid var(--accent);
+  width: 100%;
+  position: fixed;
+  z-index: 1;
 }
 
 .content {
@@ -37,6 +41,10 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 40px;
+}
+
+.title {
+  margin-top: 120px;
 }
 
 .footer {
@@ -135,6 +143,15 @@ button {
     width: 95vw;
     height: 95vw;
     padding: 11px;
+  }
+
+  .header {
+    font-size: 3.3rem;
+    padding: 5px;
+  }
+
+  .title {
+    font-size: 3rem;
   }
 }
 
