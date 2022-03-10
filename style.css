@@ -1,3 +1,9 @@
+:root {
+  --dark: #365314; /* lime 900 */
+  --accent: #a3e635; /* lime 400 */
+  --bg: #f7fee7; /* lime 100 */
+}
+
 
 * {
   margin: 0;
@@ -16,13 +22,13 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: darkslategray;
+  background-color: var(--dark);
   font-size: 5rem;
 }
 
 .content {
   flex: 1;
-  background-color: slategray;
+  background-color: var(--bg);
   font-size: 5rem;
 
   display: flex;
@@ -33,7 +39,7 @@
 }
 
 .footer {
-  background-color: darkslategrey;
+  background-color: var(--dark);
   display: flex;
   justify-content: center;
 }
@@ -59,7 +65,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: rgb(43, 43, 110);
+  background-color: var(--accent);
   box-sizing: border-box;
   width: 70vw;
   height: 70vw;
@@ -91,7 +97,7 @@ img {
 .dot {
   width: 30px;
   height: 30px;
-  background-color: rgba(19, 149, 255, 0.77);
+  background-color: #a3e63599;
   font-size: 1rem;
   border-radius: 5px;
 
@@ -127,4 +133,8 @@ button {
     height: 95vw;
     padding: 11px;
   }
+}
+
+p {
+  color: var(--dark)
 }

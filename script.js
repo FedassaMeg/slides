@@ -6,7 +6,7 @@ const right = document.querySelector('.right');
 const dotContainer = document.querySelector('.dot-container');
 
 
-// there has to be a better way to do this 
+// there has to be a better way to generate this 
 firstImg = new Image();
 firstImg.src = './img/mac.jpg';
 secondImg = new Image();
@@ -28,7 +28,7 @@ function replaceImg() {
   console.log(currIndex);
   imgWrapper.removeChild(imgWrapper.lastChild);
   imgWrapper.appendChild(imgArray[currIndex]);
-  // I need to add a animation or something around here
+  // I need to add an animation or something around here
   // setTimeout(imgRight, 5900);
 } 
 
