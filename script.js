@@ -28,7 +28,7 @@ function replaceImg() {
   console.log(currIndex);
   imgWrapper.removeChild(imgWrapper.lastChild);
   imgWrapper.appendChild(imgArray[currIndex]);
-  setTimeout(imgRight, 5900);
+  // setTimeout(imgRight, 5900);
 } 
 
 const imgLeft = () => {
@@ -65,7 +65,7 @@ imgArray.forEach((item, index) => {
   dotContainer.append(genNavDot(index));
 })
 
-imgRight();
+
 
 
 const menuToggler = () => {
@@ -77,3 +77,8 @@ const menuToggler = () => {
 }
 
 header.onclick = menuToggler;
+
+const interval = setInterval(function() {
+  ++counter;
+  replaceImg();
+}, 3900);
