@@ -11,30 +11,30 @@ let counter = 0;
 
 // there has to be a better way to generate this 
 firstImg = new Image();
-firstImg.src = './img/mac.jpg';
+firstImg.src = './img/ender3_s1.jpg';
 secondImg = new Image();
-secondImg.src = './img/apple.jpg';
+secondImg.src = './img/flsun.jpg';
 thirdImg = new Image();
-thirdImg.src = './img/bridge.jpg';
+thirdImg.src = './img/prusa_mini.jpg';
 fourthImg = new Image();
-fourthImg.src = './img/sus.jpg';
+fourthImg.src = './img/voron2_4.JPG';
 
 // const imgArray = [firstImg, secondImg, thirdImg, fourthImg];
 const imgArray = [{
   ele: firstImg,
-  title: 'Fruit',
+  title: 'Ender 3 S1',
   desc: 'description 1 goes here words words words words words words',
 }, {
   ele: secondImg,
-  title: 'Fruit 2',
+  title: 'Flsun SR',
   desc: 'description 2 goes here',
 }, {
   ele: thirdImg,
-  title: 'Bridge',
+  title: 'Prusa Mini+',
   desc: 'description 3 goes here words words words words words words words words words words words words',
 }, {
   ele: fourthImg,
-  title: '???',
+  title: 'Voron 2.4',
   desc: 'description 4 goes here',
 }]
 
@@ -75,7 +75,8 @@ genNavDot = (index) => {
     // console.log(index);
     counter = index;
     imgWrapper.removeChild(imgWrapper.lastChild);
-    imgWrapper.appendChild(imgArray[index]);
+    imgWrapper.appendChild(imgArray[index].ele);
+    replaceTitle();
   }
   return dot;
 }

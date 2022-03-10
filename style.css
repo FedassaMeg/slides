@@ -131,6 +131,7 @@ img {
   border-left: 20px solid var(--accent);
   margin-top: 25px;
   border-radius: 18px;
+  padding-left: 8px;
 }
 
 
@@ -160,6 +161,7 @@ button {
 
   .title {
     font-size: 3rem;
+    text-align: center;
   }
 
   .desc {
