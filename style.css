@@ -1,13 +1,14 @@
 :root {
   --dark: #365314; /* lime 900 */
   --accent: #a3e635; /* lime 400 */
-  --bg: #f7fee7; /* lime 100 */
+  --bg: #f7fee7; /* lime 50 */
+  --text: #fdfff6;
 }
 
 
 * {
   margin: 0;
-  color: cyan;
+  color: var(--text);
   font-family: sans-serif;
 }
 
@@ -42,6 +43,8 @@
   background-color: var(--dark);
   display: flex;
   justify-content: center;
+  font-weight: bold;
+  padding: 4px;
 }
 
 .menu {
@@ -137,4 +140,9 @@ button {
 
 p {
   color: var(--dark)
+}
+
+.menu-link {
+  text-align: center;
+  padding-top: 20px;
 }
