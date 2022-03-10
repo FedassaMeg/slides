@@ -24,18 +24,22 @@ const imgArray = [{
   ele: ender,
   title: 'Ender 3 S1',
   desc: 'description 1 goes here words words words words words words',
+  price: '$499.99'
 }, {
   ele: flsun,
   title: 'Flsun SR',
   desc: 'description 2 goes here',
+  price: '$459.99'
 }, {
   ele: prusa,
   title: 'Prusa Mini+',
-  desc: 'description 3 goes here words words words words words words words words words words words words',
+  desc: 'description 3 goes here words words words words words',
+  price: '$349.99'
 }, {
   ele: voron,
   title: 'Voron 2.4',
   desc: 'description 4 goes here',
+  price: "$too much"
 }]
 
 function replaceImg() {
