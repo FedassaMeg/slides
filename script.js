@@ -18,7 +18,7 @@ fourthImg.src = './img/sus.jpg';
 
 const imgArray = [firstImg, secondImg, thirdImg, fourthImg];
 
-let counter = 0;
+let counter = -1;
 
 // append first image from array to DOM
 imgWrapper.appendChild(imgArray[0]); 
@@ -28,6 +28,7 @@ function replaceImg() {
   console.log(currIndex);
   imgWrapper.removeChild(imgWrapper.lastChild);
   imgWrapper.appendChild(imgArray[currIndex]);
+  setTimeout(imgRight, 5900);
 } 
 
 const imgLeft = () => {
@@ -64,12 +65,7 @@ imgArray.forEach((item, index) => {
   dotContainer.append(genNavDot(index));
 })
 
-
-
-
-
-
-
+imgRight();
 
 
 const menuToggler = () => {
