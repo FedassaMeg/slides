@@ -45,7 +45,7 @@ function replaceImg() {
 } 
 
 const imgLeft = () => {
-  counter === 0 ? counter = 3 : --counter;
+  counter === 0 ? counter = imgArray.length - 1 : --counter;
   replaceImg();
 }
 
@@ -70,7 +70,6 @@ genNavDot = (index) => {
     imgWrapper.removeChild(imgWrapper.lastChild);
     imgWrapper.appendChild(imgArray[index]);
   }
-
   return dot;
 }
 
