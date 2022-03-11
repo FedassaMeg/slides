@@ -25,6 +25,7 @@
 .header {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: var(--dark);
   font-size: 5rem;
   border-bottom: 4px solid var(--accent);
@@ -169,7 +170,11 @@ button {
   border-width: 0px;
 }
 
-
+#menu {
+  font-size: 64px;
+  position: absolute;
+  left: 20px;
+}
 
 @media only screen and (max-width: 500px) {
   .img-wrapper {
@@ -179,12 +184,12 @@ button {
   }
 
   .header {
-    font-size: 3.3rem;
+    font-size: 3.2rem;
     padding: 5px;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 2.9rem;
     text-align: center;
   }
 
@@ -197,6 +202,11 @@ button {
 
   .desc-text {
     font-size: 1.4rem;
+  }
+
+  #menu {
+    font-size: 44px;
+    left: 12px;
   }
 }
 
@@ -212,3 +222,4 @@ p {
 a {
   text-decoration: none;
 }
+
