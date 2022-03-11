@@ -5,7 +5,8 @@ const imgWrapper = document.querySelector('.img-wrapper');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const dotContainer = document.querySelector('.dot-container');
-const desc = document.querySelector('.desc');
+const descPrice = document.querySelector('.price-value');
+const descText = document.querySelector('.desc-text');
 
 let counter = 0;
 
@@ -23,23 +24,23 @@ voron.src = './img/voron2_4.JPG';
 const imgArray = [{
   ele: ender,
   title: 'Ender 3 S1',
-  desc: 'description 1 goes here words words words words words words',
+  desc: 'The Ender 3 S1 is a cartesian printer developed by Creality, and is an improved version of the immensely popular Ender 3.',
   price: '$499.99'
 }, {
   ele: flsun,
   title: 'Flsun SR',
-  desc: 'description 2 goes here',
+  desc: 'The SR (Super Racer) is a delta printer made by Flsun, known for its ridiculous speed, reaching at least 150mm/s with a stock configuration.',
   price: '$459.99'
 }, {
   ele: prusa,
   title: 'Prusa Mini+',
-  desc: 'description 3 goes here words words words words words',
+  desc: 'The Prusa Mini+ is a small and simple cartesian printer is known for its cheap price and high quality, but it has a small build volume.',
   price: '$349.99'
 }, {
   ele: voron,
   title: 'Voron 2.4',
-  desc: 'description 4 goes here',
-  price: "$too much"
+  desc: 'The Voron 2.4 is a coreXY printer that is best-in-class and can print at speeds of up to 1000mm/s, but requires you to build it yourself.',
+  price: "too much"
 }]
 
 function replaceImg() {
@@ -52,7 +53,8 @@ function replaceImg() {
 
 function replaceText() {
   title.textContent = imgArray[counter % imgArray.length].title;
-  desc.textContent = imgArray[counter % imgArray.length].desc;
+  descPrice.textContent = imgArray[counter % imgArray.length].price;
+  descText.textContent = imgArray[counter % imgArray.length].desc;
 }
 
 const imgLeft = () => {
@@ -76,7 +78,6 @@ genNavDot = (index) => {
   dot.classList.add('dot');
   dot.textContent = index + 1;
   dot.onclick = () => {
-    // console.log(index);
     counter = index;
     replaceImg();
     replaceText();
@@ -93,10 +94,10 @@ const autoSlide = setInterval(function() {
   ++counter;
   replaceImg();
   replaceText();
-}, 3900); // I want this interval to be reset when any button is clicked
+}, 6100); // I want this interval to be reset when any button is clicked
 // because rn it progresses the slide every 3900ms regardless of when last btn was clicked
 
-// append first image from array to DOM, then initialize text
+// initialize first image and text
 imgWrapper.appendChild(imgArray[0].ele); 
 replaceText();
 
