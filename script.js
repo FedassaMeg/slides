@@ -1,6 +1,7 @@
 const header = document.querySelector('.header');
 const title = document.querySelector('.title');
 const menu = document.querySelector('.menu');
+const menuDarken = document.querySelector('.menu-darken');
 const imgWrapper = document.querySelector('.img-wrapper');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
@@ -114,9 +115,12 @@ replaceText();
 const menuToggler = () => {
   if (menu.classList.contains('visible')) {
     menu.classList.remove('visible');
+    menuDarken.classList.remove('visible');
   } else {
     menu.classList.add('visible');
+    menuDarken.classList.add('visible');
   }
 }
 
 header.onclick = menuToggler;
+menuDarken.onclick = menuToggler;
