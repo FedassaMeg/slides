@@ -41,7 +41,7 @@ const imgArray = [{
   ele: voron,
   title: 'Voron 2.4',
   desc: 'The Voron 2.4 is a coreXY printer that is best-in-class and can print at speeds of up to 1000mm/s, but requires you to build it yourself.',
-  price: "too much"
+  price: "$Too much"
 }]
 
 function replaceImg() {
