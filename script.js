@@ -10,6 +10,7 @@ const descPrice = document.querySelector('.price-value');
 const descText = document.querySelector('.desc-text');
 
 let counter = 0;
+const slideTime = 6400;
 
 // there has to be a better way to generate this 
 ender = new Image();
@@ -48,8 +49,7 @@ function replaceImg() {
   const currIndex = counter % imgArray.length
   imgWrapper.removeChild(imgWrapper.lastChild);
   imgWrapper.appendChild(imgArray[currIndex].ele);
-  // I need to add an animation or something around here
-  // setTimeout(imgRight, 5900);
+  resetAutoSlide();
 } 
 
 function replaceText() {
@@ -91,13 +91,12 @@ imgArray.forEach((item, index) => {
   dotContainer.append(genNavDot(index));
 })
 
-/* const autoSlide = setInterval(function() {
-  ++counter;
-  replaceImg();
-  replaceText();
-}, 6100); // I want this interval to be reset when any button is clicked
-// because rn it progresses the slide every 3900ms regardless of when last btn was clicked
- */
+let autoSlide = setInterval(imgRight, slideTime);
+function resetAutoSlide() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(imgRight, slideTime);
+}
+
 // initialize first image and text
 imgWrapper.appendChild(imgArray[0].ele); 
 replaceText();
