@@ -91,13 +91,13 @@ imgArray.forEach((item, index) => {
   dotContainer.append(genNavDot(index));
 })
 
-const autoSlide = setInterval(function() {
+/* const autoSlide = setInterval(function() {
   ++counter;
   replaceImg();
   replaceText();
 }, 6100); // I want this interval to be reset when any button is clicked
 // because rn it progresses the slide every 3900ms regardless of when last btn was clicked
-
+ */
 // initialize first image and text
 imgWrapper.appendChild(imgArray[0].ele); 
 replaceText();
