@@ -49,7 +49,7 @@ function replaceImg() {
   const currIndex = counter % imgArray.length
   imgWrapper.removeChild(imgWrapper.lastChild);
   imgWrapper.appendChild(imgArray[currIndex].ele);
-  resetAutoSlide();
+  resetAutoSlide(); // reset slideshow timer
 }
 
 function replaceText() {
