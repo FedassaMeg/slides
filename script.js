@@ -50,7 +50,7 @@ function replaceImg() {
   imgWrapper.removeChild(imgWrapper.lastChild);
   imgWrapper.appendChild(imgArray[currIndex].ele);
   resetAutoSlide();
-} 
+}
 
 function replaceText() {
   title.textContent = imgArray[counter % imgArray.length].title;
