@@ -36,7 +36,7 @@ const imgArray = [{
 }, {
   ele: prusa,
   title: 'Prusa Mini+',
-  desc: 'The Prusa Mini+ is a small and simple cartesian printer is known for its cheap price and high quality, but it has a small build volume.',
+  desc: 'The Prusa Mini+ is a small and simple cartesian printer and is known for its cheap price and high quality, but it has a small build volume.',
   price: '$349.99'
 }, {
   ele: voron,

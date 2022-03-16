@@ -30,18 +30,31 @@
   width: 100%;
   position: fixed;
   z-index: 1;
-  box-shadow: 0 0 12px 2px rgb(82, 82, 82);
+  box-shadow: 0 0 12px 2px rgb(51, 51, 51);
 }
 
 .content {
   flex: 1;
-  background-color: var(--bg);
   font-size: 5rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 40px;
+}
+
+.background {
+  padding-top: 370px;
+  background: rgba(1, 1, 1, 0.2) url("./img/printfarm.jpg");
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -2;
 }
 
 .title {
@@ -52,8 +65,15 @@
   background-color: var(--dark);
   display: flex;
   justify-content: center;
+  align-items: center;
   font-weight: bold;
   padding: 4px;
+  gap: 8px;
+  box-shadow: 0 0 12px 2px rgb(32, 32, 32);
+}
+
+.footer img {
+  width: 23px;
 }
 
 .menu {
@@ -149,11 +169,13 @@ img {
   margin-top: 25px;
   border-radius: 18px;
   padding: 8px;
-  background-color: #ecfccb;
+  background-color: #ecfccb4c;
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0 12px 0 rgb(82, 82, 82);
 }
 
 .desc * {
-  color: var(--dark);
+  color: var(--bg);
 }
 
 .price {
@@ -195,7 +217,7 @@ button {
   }
 
   .header {
-    font-size: 3.2rem;
+    font-size: 3rem;
     padding: 5px;
   }
 
@@ -242,7 +264,8 @@ button {
 }
 
 p {
-  color: var(--dark)
+  color: var(--bg);
+  text-shadow: 0 0 5px black;
 }
 
 .menu-link {
