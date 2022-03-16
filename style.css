@@ -51,8 +51,8 @@
   background: rgba(1, 1, 1, 0.28) url("./img/printfarm.jpg");
   background-blend-mode: darken;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
+  background-position: center; /* center */
+  background-size: cover; /* auto */
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -245,6 +245,12 @@ button {
   .left, 
   .right {
     font-size: 2rem;
+  }
+
+  .background {
+    margin-top: 63px;
+    background: rgba(1, 1, 1, 0.12) url("./img/printfarm_mobile.jpg");
+    background-size: 132%;
   }
 
   .desc {
