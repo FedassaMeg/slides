@@ -249,8 +249,9 @@ button {
 
   .background {
     margin-top: 63px;
-    background: rgba(1, 1, 1, 0.12) url("./img/printfarm_mobile.jpg");
+    background: #f7fee724 url("./img/printfarm_mobile.jpg");
     background-size: 132%;
+    background-blend-mode: lighten;
   }
 
   .desc {
