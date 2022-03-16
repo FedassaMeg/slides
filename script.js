@@ -22,7 +22,6 @@ prusa.src = './img/prusa_mini.jpg';
 voron = new Image();
 voron.src = './img/voron2_4.JPG';
 
-// const imgArray = [firstImg, secondImg, thirdImg, fourthImg];
 const imgArray = [{
   ele: ender,
   title: 'Ender 3 S1',
@@ -86,11 +85,13 @@ genNavDot = (index) => {
   return dot;
 }
 
+// generate proper amount of nav dots based on how many items are in the imgArray
 imgArray.forEach((item, index) => {
   console.log(item);
   dotContainer.append(genNavDot(index));
 })
 
+// make the slideshow progress automatically if no buttons are clicked
 let autoSlide = setInterval(imgRight, slideTime);
 function resetAutoSlide() {
   clearInterval(autoSlide);
@@ -100,6 +101,8 @@ function resetAutoSlide() {
 // initialize first image and text
 imgWrapper.appendChild(imgArray[0].ele); 
 replaceText();
+
+
 
 
 
