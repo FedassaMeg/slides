@@ -10,7 +10,7 @@ const descPrice = document.querySelector('.price-value');
 const descText = document.querySelector('.desc-text');
 
 let counter = 0;
-const slideTime = 6400;
+let slideTime = 6400;
 
 // there has to be a better way to generate this 
 ender = new Image();
@@ -26,7 +26,7 @@ const imgArray = [{
   ele: ender,
   title: 'Ender 3 S1',
   desc: 'The Ender 3 S1 is a cartesian printer developed by Creality, and is an improved version of the immensely popular Ender 3.',
-  price: '$499.99'
+  price: '$419.99'
 }, {
   ele: flsun,
   title: 'Flsun SR',
@@ -113,7 +113,7 @@ replaceText();
 
 
 
-// ignore this
+// ignore this, it's for the basic nav menu
 const menuToggler = () => {
   if (menu.classList.contains('visible')) {
     menu.classList.remove('visible');
