@@ -116,6 +116,7 @@ imgArray.forEach((item, index) => {
 
 // make the slideshow progress automatically if no buttons are clicked
 let autoSlide = setInterval(imgRight, slideTime);
+
 function resetAutoSlide() {
   clearInterval(autoSlide);
   autoSlide = setInterval(imgRight, slideTime);
