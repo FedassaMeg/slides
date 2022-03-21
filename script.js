@@ -1,3 +1,5 @@
+import { getIndexModulo } from "./utils.js";
+
 const header = document.querySelector(".header");
 const title = document.querySelector(".title");
 const menu = document.querySelector(".menu");
@@ -13,16 +15,14 @@ let counter = 0;
 let prev = 0;
 let slideTime = 6400;
 
-
-
 // there has to be a better way to generate this
-ender = new Image();
+const ender = new Image();
 ender.src = "./img/ender3_s1.jpg";
-flsun = new Image();
+const flsun = new Image();
 flsun.src = "./img/flsun.jpg";
-prusa = new Image();
+const prusa = new Image();
 prusa.src = "./img/prusa_mini.jpg";
-voron = new Image();
+const voron = new Image();
 voron.src = "./img/voron2_4.JPG";
 
 const imgArray = [
@@ -51,15 +51,26 @@ const imgArray = [
     price: "$Too much",
   },
 ];
+const getIndex = getIndexModulo(imgArray.length);
+const getElementAtIndex = (index) => imgArray[index].ele;
 
 function replaceImg() {
-  if(!(prev === counter)) {
-    const currIndex = counter%imgArray.length;
-    const prevIndex = prev%imgArray.length; 
-    imgArray[prevIndex].ele.classList.remove("active");
-    setTimeout(() => imgWrapper.removeChild(imgWrapper.querySelector("img:not(.active)")), 500);
-    imgWrapper.appendChild(imgArray[currIndex].ele);
-    imgArray[currIndex].ele.classList.add("active");
+  const isSimilar = prev === counter;
+  if (!isSimilar) {
+    const currIndex = getIndex(counter);
+    const prevIndex = getIndex(prev);
+
+    const imgCurr = getElementAtIndex(currIndex);
+    imgCurr.classList.add("active");
+
+    getElementAtIndex(prevIndex).classList.remove("active");
+
+    const imgPrev = imgWrapper.querySelector("img:not(.active)");
+
+    setTimeout(() => imgWrapper.removeChild(imgPrev), 500);
+
+    imgWrapper.appendChild(imgCurr);
+
     resetAutoSlide(); // reset slideshow timer
   }
 }
@@ -86,8 +97,8 @@ left.onclick = imgLeft;
 right.onclick = imgRight;
 
 // generate navigation dots
-genNavDot = (index) => {
-  dot = document.createElement("div");
+const genNavDot = (index) => {
+  const dot = document.createElement("div");
   dot.classList.add("dot");
   dot.textContent = index + 1;
   dot.onclick = () => {
@@ -100,7 +111,6 @@ genNavDot = (index) => {
 
 // generate proper amount of nav dots based on how many items are in the imgArray
 imgArray.forEach((item, index) => {
-  console.log(item);
   dotContainer.append(genNavDot(index));
 });
 

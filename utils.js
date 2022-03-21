@@ -1,0 +1,1 @@
+export const getIndexModulo = (length) => (index) => index%length;
